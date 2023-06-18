@@ -1,0 +1,20 @@
+version: "3.9"
+
+services:
+  elder-scrolls-tests:
+    image: elder-scrolls-tests
+    build:
+      context: ./
+      dockerfile: test/Dockerfile
+    container_name: elder-scrolls-tests
+    stdin_open: true
+    tty: true
+    volumes:
+      - "${SKYRIM_PATH}:/skyrim:ro"
+      - "./elder_scrolls:/elder_scrolls:ro"
+
+volumes:
+  skyrim:
+    name: skyrim
+  elder_scrolls:
+    name: elder_scrolls
