@@ -1,5 +1,5 @@
-# The Elder Scrolls Files Reader
-A reader for The Elder Scrolls files.
+# The Elder Scrolls Files
+Parse & edit Elder Scrolls files.
 
 ## Minimal Example - Print the Number of Books
 ```
@@ -10,7 +10,7 @@ game_folder = 'C:\\Program Files (x86)\\Steam\\steamapps\\common\\Skyrim Special
 
 game_file_path = os.path.join(game_folder, 'Data', 'Skyrim.esm')
 
-with ElderScrollsFileReader(game_file_path) as elder_scrolls_file:
+with ElderScrollsFile(game_file_path) as elder_scrolls_file:
     book_count = len(elder_scrolls_file['BOOK'])
     print(f"Skyrim.esm has {book_count} books in it.")
 ```
